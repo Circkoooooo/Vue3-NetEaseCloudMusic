@@ -1,0 +1,38 @@
+@header_height: 60px;
+
+#app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+#header {
+    height: @header_height;
+    width: 100%;
+    background-color: @header_bg;
+    -webkit-app-region: drag;
+    z-index: 10;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-color: @main_bg;
+    display: flex;
+    height: calc(~"100vh - @header_height");
+
+}
+
+#aside {
+    min-width: 220px;
+    height: 100vh;
+    background-color: @aside_bg;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+
+    &:hover {
+        overflow-y: auto;
+    }
+}

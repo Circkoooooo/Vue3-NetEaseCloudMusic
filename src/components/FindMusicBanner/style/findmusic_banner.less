@@ -1,0 +1,54 @@
+.findmusic_banner {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+img {
+    height: 180px;
+    width: 500px;
+    border-radius: 8px;
+    position: absolute;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+}
+
+.img_box {
+    height: 200px;
+    width: 100%;
+    font-size: 0;
+    border-radius: 8px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+}
+
+.img_left {
+    left: 0;
+    z-index: 2;
+}
+
+.img_center {
+    height: 180px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.img_right {
+    left: 100%;
+    transform: translateX(-100%);
+    z-index: 2;
+}
+
+.img_now_center {
+    height: 200px;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,41 @@
+{
+  "name": "cloud-music",
+  "description": "云音乐",
+  "author": "huangyuanxin",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit --skipLibCheck &&  vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "electron:serve": "concurrently \"npm run dev\" \"npm run start\"",
+    "electron:build": "concurrently \"npm run build\" &&  \"electron-builder\""
+  },
+  "build": {
+    "appId": "org.hyx.cloud-music",
+    "directories": {
+      "output": "output"
+    }
+  },
+  "main": "src/electron/main.js",
+  "isolatedModules": true,
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cross-env": "^7.0.3",
+    "path": "^0.12.7",
+    "vue": "^3.2.25",
+    "vue-axios": "^3.4.1",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.0",
+    "concurrently": "^7.1.0",
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vue-tsc": "^0.29.8"
+  }
+}
