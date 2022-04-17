@@ -14,11 +14,5 @@ interface TreeTag {
         name: string;
     }>;
 }
-withDefaults(defineProps<TreeTag>(), {
-    TreeTagList: [
-        {
-            name: "",
-        },
-    ],
-});
+withDefaults(defineProps<TreeTag>(), {});
 </script>

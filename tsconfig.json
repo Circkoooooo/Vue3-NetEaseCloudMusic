@@ -8,7 +8,6 @@
         "jsx": "preserve",
         "sourceMap": true,
         "resolveJsonModule": true,
-        "isolatedModules": true,
         "esModuleInterop": true,
         "lib": ["esnext", "dom"],
         "paths": {
@@ -21,7 +20,8 @@
         "src/**/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
-        "src/**/*.vue"
+        "src/**/*.vue",
+        "src/test/treeTagGroup.js"
     ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -15,16 +15,13 @@
 import "../style/aside_menugroup.less";
 import AsideMenu from "@/components/AsideMenu/src/AsideMenu.vue";
 
-interface props {
-    groupTitle: string;
+interface MenuGroup {
+    groupTitle: string | undefined;
     menuList: Array<{
         title: string;
         link: string;
     }>;
 }
 
-withDefaults(defineProps<props>(), {
-    groupTitle: "",
-    menuList: [],
-});
+withDefaults(defineProps<MenuGroup>(), {});
 </script>

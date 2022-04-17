@@ -8,12 +8,16 @@ import "../style/aside_menu.less";
 import MenuContent from "./MenuContent.vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
-
-const props = defineProps({
-    title: "",
-    link: "",
-});
-
+const props = withDefaults(
+    defineProps<{
+        title: string;
+        link: string;
+    }>(),
+    {
+        title: "",
+        link: "",
+    }
+);
 const changeRouter = () => {
     router.push(props.link);
 };

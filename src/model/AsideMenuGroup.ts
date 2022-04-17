@@ -1,10 +1,10 @@
 export type menuList = {
-    title?: string,
-    link?: string,
+    title: string,
+    link: string,
 }
 
 export type AsideMenuGroup = {
     groupTitle?: string,
-    menuList?: Array<menuList>
+    menuList: Array<menuList>
 }
 
