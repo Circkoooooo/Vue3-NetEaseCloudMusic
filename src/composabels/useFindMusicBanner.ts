@@ -16,7 +16,7 @@ export const useFindMusicBanner = (props: BannerList) => {
      */
     const next = () => {
         initTimer()
-        left.value = (left.value + 1) % banner.blocks.length
+        left.value = (left.value + 1 % banner.blocks.length) === 0 ? banner.blocks.length : (left.value % banner.blocks.length) + 1
     }
 
     /**
@@ -30,13 +30,16 @@ export const useFindMusicBanner = (props: BannerList) => {
     const changeTimer = () => {
         timer.value = setInterval(() => {
             next()
-        }, 5000)
+        }, 1000)
     }
+    /**
+     * 将计时器归零之后重新开始
+     */
     const initTimer = () => {
         clearInterval(timer.value)
         timer.value = setInterval(() => {
             next()
-        }, 5000)
+        }, 1000)
 
     }
 
@@ -44,7 +47,7 @@ export const useFindMusicBanner = (props: BannerList) => {
      * 通过底部的hover来切换
      */
     const bottomChange = (index: number) => {
-        clearInterval(timer.value)
+        initTimer()
         left.value = index + 1
     }
 

@@ -30,7 +30,7 @@
                 v-for="(_, key) in banner.blocks"
                 @mouseenter="bottomChange(key)"
                 :class="{
-                    bottom_box_now: left === key,
+                    bottom_box_now: left - 1 === key,
                 }"
             ></div>
         </div>
