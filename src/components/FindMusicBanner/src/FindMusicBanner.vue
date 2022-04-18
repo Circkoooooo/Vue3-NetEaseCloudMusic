@@ -27,11 +27,11 @@
         <div class="change_bottom">
             <div
                 class="bottom_box"
-                :class="{
-                    bottom_box_now: key === left - 1,
-                }"
-                v-for="(item, key) in banner.blocks.length"
+                v-for="(_, key) in banner.blocks"
                 @mouseenter="bottomChange(key)"
+                :class="{
+                    bottom_box_now: left === key,
+                }"
             ></div>
         </div>
     </div>

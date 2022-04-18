@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import "../style/find_music.less";
-import { ref } from "vue";
+import { onUpdated, ref } from "vue";
 import { TreeTagList } from "@/config/FindMusic_TreeTag";
 import { getHomeAd } from "@/api/getHomeAd";
 import {

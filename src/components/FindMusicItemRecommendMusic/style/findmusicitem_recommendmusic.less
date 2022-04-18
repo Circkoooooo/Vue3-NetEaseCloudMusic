@@ -1,22 +1,24 @@
 .findmusicitem_recommendmusic {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(5, 20%);
 }
 
 .musiclist_item {
-    width: 140px;
-    height: 140px;
     margin: 10px;
     position: relative;
-    border-radius: 8px;
 
     img {
+        border-radius: 8px;
         width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
     }
-    
 
+    .item_text {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
 }

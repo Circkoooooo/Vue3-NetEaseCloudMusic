@@ -6,22 +6,19 @@
             :key="item.id"
         >
             <img :src="item.picUrl" />
+            <div class="item_text">{{ item.name }}</div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import "../style/findmusicitem_recommendmusic.less";
-interface DailyRecommendMusicList {
-    dailyRecommendMusicList: {
-        id: number;
-        name: string;
-        copywrite: string;
-        picUrl: string;
-        playcount: number;
-        createTime: number;
-    }[];
-}
+import type { DailyRecommendMusicList } from "@/composabels/useFindMusicRecommendMusic";
 
-withDefaults(defineProps<DailyRecommendMusicList>(), {});
+withDefaults(
+    defineProps<{
+        dailyRecommendMusicList: DailyRecommendMusicList[];
+    }>(),
+    {}
+);
 </script>

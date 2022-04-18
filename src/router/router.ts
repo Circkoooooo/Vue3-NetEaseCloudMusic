@@ -10,8 +10,8 @@ const routes = [
         component: FindMusic
     },
     {
-        path: "/Video",
-        name: "Video",
+        path: "/video",
+        name: "video",
         component: Video
     },
 ]
