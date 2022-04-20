@@ -9,10 +9,27 @@
     position: fixed;
     z-index: 10;
 
-    .tag {
-        margin-right: 20px;
-        font-weight: 600;
-        font-size: @normal_text;
-        cursor: pointer;
+    .now_tag {
+        font-size: @large_text;
+        font-weight: bold;
+        position: relative;
     }
+
+    .tag_bottombar {
+        width: 80%;
+        height: 5px;
+        background-color: #ec4141;
+        display: inline-block;
+    }
+
+}
+
+
+.tag {
+    margin-right: 20px;
+    font-size: @normal_text;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

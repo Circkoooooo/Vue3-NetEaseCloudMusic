@@ -7,8 +7,8 @@ export const asideMenu = <Array<AsideMenuGroup>>[
                 link: "findmusic"
             },
             {
-                title: "博客",
-                link: "blog"
+                title: "播客",
+                link: "podcast"
             },
             {
                 title: "视频",

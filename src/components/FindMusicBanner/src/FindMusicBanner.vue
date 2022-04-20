@@ -39,13 +39,11 @@
 
 <script lang="ts" setup>
 import "../style/findmusic_banner.less";
+import type { Blocks } from "@/model/BannerList";
 import { useFindMusicBanner } from "@/composabels/useFindMusicBanner";
 import { onMounted } from "vue";
 interface BannerList {
-    blocks: Array<{
-        pic: string;
-        url: string;
-    }>;
+    blocks: Blocks;
 }
 
 const props = withDefaults(defineProps<BannerList>(), {});

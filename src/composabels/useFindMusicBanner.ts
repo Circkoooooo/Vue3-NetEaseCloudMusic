@@ -3,7 +3,6 @@ import { ref } from "vue";
 export interface BannerList {
     blocks: Array<{
         pic: string;
-        url: string;
     }>;
 }
 
@@ -28,9 +27,11 @@ export const useFindMusicBanner = (props: BannerList) => {
     }
 
     const changeTimer = () => {
-        timer.value = setInterval(() => {
-            next()
-        }, 1000)
+        if (banner) {
+            timer.value = setInterval(() => {
+                next()
+            }, 5000)
+        }
     }
     /**
      * 将计时器归零之后重新开始
@@ -39,7 +40,7 @@ export const useFindMusicBanner = (props: BannerList) => {
         clearInterval(timer.value)
         timer.value = setInterval(() => {
             next()
-        }, 1000)
+        }, 5000)
 
     }
 

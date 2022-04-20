@@ -9,7 +9,5 @@ import "../style/menu_content.less";
 interface MenuContent {
     title: string;
 }
-withDefaults(defineProps<MenuContent>(), {
-    title: "",
-});
+withDefaults(defineProps<MenuContent>(), {});
 </script>
