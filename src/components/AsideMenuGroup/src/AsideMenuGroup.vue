@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import "../style/aside_menugroup.less";
 import AsideMenu from "@/components/AsideMenu/src/AsideMenu.vue";
+
 defineEmits(["emitChangeAside"]);
 interface MenuGroup {
     groupTitle: string | undefined;

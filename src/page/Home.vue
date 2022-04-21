@@ -29,6 +29,5 @@ import { useAside } from "@/composabels/useAside";
 const { currentAside, changeAside } = useAside();
 const emitChangeAside = (link: string) => {
     changeAside(link);
-    console.log(link);
 };
 </script>

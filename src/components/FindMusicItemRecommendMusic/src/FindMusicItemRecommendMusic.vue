@@ -1,23 +1,23 @@
 <template>
     <div class="findmusicitem_recommendmusic">
-        <div
-            class="musiclist_item"
+        <MusicListCard
             v-for="item in dailyRecommendMusicList"
-            :key="item.id"
-        >
-            <img :src="item.picUrl" />
-            <div class="item_text">{{ item.name }}</div>
-        </div>
+            :musiclist="item"
+        ></MusicListCard>
     </div>
 </template>
 
 <script setup lang="ts">
 import "../style/findmusicitem_recommendmusic.less";
-import type { DailyRecommendMusicList } from "@/composabels/useFindMusicRecommendMusic";
-
+import type { MusicList } from "@/model/MusicList";
+import { numberToCh } from "@/utils/numberToCh";
+import MusicListCard from "@/components/MusicListCard/src/MusicListCard.vue";
+interface DailyRecommendMusicList {
+    dailyRecommendMusicList: MusicList;
+}
 withDefaults(
     defineProps<{
-        dailyRecommendMusicList: DailyRecommendMusicList[];
+        dailyRecommendMusicList: DailyRecommendMusicList;
     }>(),
     {}
 );

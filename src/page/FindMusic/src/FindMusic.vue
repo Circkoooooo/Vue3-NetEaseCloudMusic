@@ -5,7 +5,7 @@
         </div>
 
         <div class="findmusic_content">
-            <router-view> </router-view>
+            <router-view></router-view>
         </div>
     </div>
 </template>

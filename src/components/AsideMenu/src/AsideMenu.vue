@@ -7,6 +7,7 @@
 import "../style/aside_menu.less";
 import MenuContent from "./MenuContent.vue";
 
+
 withDefaults(
     defineProps<{
         title: string;
