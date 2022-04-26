@@ -1,9 +1,7 @@
 <template>
     <div class="findmusic_item">
         <div class="findmusicitem_title">{{ title }}</div>
-        <div class="findmusicitem_content">
-            <slot></slot>
-        </div>
+        <slot></slot>
     </div>
 </template>
 

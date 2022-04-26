@@ -1,5 +1,5 @@
 <template>
-    <div class="musiclist_item" @click="gotoMusicList(musiclist)">
+    <div class="musiclist_item" @click="gotoMusicList(musiclist.id)">
         <div class="item_img">
             <img :src="musiclist.picUrl" />
             <div class="item_listinfo">

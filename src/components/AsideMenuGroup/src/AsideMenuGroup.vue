@@ -9,7 +9,7 @@
             :title="item.title"
             :link="item.link"
             @click="$emit('emitChangeAside', item.link)"
-            :class="{ aside_menu_check: currentAside === item.link }"
+            :class="{ aside_menu_check: currentAside.includes(item.link) }"
         ></AsideMenu>
     </div>
 </template>

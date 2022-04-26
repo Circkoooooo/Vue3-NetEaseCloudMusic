@@ -12,7 +12,7 @@ import { ref } from "vue";
 import FindMusicBanner from "@/components/FindMusicBanner/src/FindMusicBanner.vue";
 import FindMusicItem from "@/components/FindMusicItem/src/FindMusicItem.vue";
 import FindMusicItemRecommendMusic from "@/components/FindMusicItemRecommendMusic/src/FindMusicItemRecommendMusic.vue";
-import type { DailyRecommendMusicList } from "@/composabels/useFindMusicRecommendMusic";
+import type { MusicList } from "@/model/MusicList";
 import type { Blocks } from "@/model/BannerList";
 import { getHomeAd } from "@/api/getHomeAd";
 import {
@@ -22,7 +22,7 @@ import {
 
 interface FindMusicRecommendProps {
     bannerList: Blocks;
-    dailyRecommendMusicList: DailyRecommendMusicList[];
+    dailyRecommendMusicList: MusicList[];
 }
 withDefaults(defineProps<FindMusicRecommendProps>(), {});
 

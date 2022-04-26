@@ -1,13 +1,14 @@
 .findmusicitem_recommendmusic {
-    display: grid;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: repeat(5, 20%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .musiclist_item {
-    margin: 10px;
+    width: 18.5%;
     position: relative;
     cursor: pointer;
+    margin-bottom: 20px;
 
     .item_img {
         position: relative;
@@ -56,18 +57,12 @@
                 opacity: 0;
                 transition: all ease-in 0.5s;
 
-
-
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
             }
         }
     }
 
     img {
-        border-radius: 8px;
+        border-radius: 4px;
         width: 100%;
     }
 
