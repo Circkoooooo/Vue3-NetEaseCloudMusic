@@ -1,0 +1,83 @@
+.musiclistshow_listinfo {
+    display: flex;
+    margin: 0 40px;
+    margin-top: 40px;
+}
+
+.listinfo_left {
+    margin-right: 20px;
+
+    .listinfoleft_img {
+        height: 180px;
+        width: 180px;
+        border-radius: 4px;
+
+        img {
+            height: 200px;
+            width: 200px;
+            display: inline-block;
+        }
+    }
+
+
+}
+
+.listinfo_right {
+    flex: 1;
+
+    .listinfotitle_tag {
+        height: 24px;
+        margin-right: 10px;
+        border: 1px solid #9e3838;
+        font-weight: bold;
+        border-radius: 2px;
+        font-size: @small_text;
+        padding: 0 2px;
+        color: #ec4141;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .listinforight_title {
+        display: flex;
+        font-weight: 600;
+        font-size: 20px;
+        flex: 1;
+        margin-bottom: 10px;
+    }
+
+    .listinforight_userinfo {
+        display: flex;
+
+        .userinfo_avatar {
+
+            img {
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+            }
+
+
+        }
+
+        .userinfo_nickname {
+            font-size: @smaller_text;
+            line-height: 24px;
+            color: #85b9e6;
+            cursor: pointer;
+            margin-left: 4px;
+
+            &:hover {
+                color: #a6ced9;
+            }
+        }
+
+        .listinfo_createtime {
+            font-size: @smaller_text;
+            line-height: 24px;
+            margin-left: 4px;
+            color: #818781;
+        }
+    }
+}

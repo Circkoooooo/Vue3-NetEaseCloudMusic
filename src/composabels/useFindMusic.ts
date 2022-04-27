@@ -27,9 +27,11 @@ export const useFindMusic = () => {
      * 接受一个索引，改变currentIndex为索引值，切换路由
      * @param index 
      */
-    const changeBannerTag = (index: number, link: string) => {
+    const changeBannerTag = (index: number, link: string | undefined) => {
         currentIndex.value = index
-        changeChildRouter(link)
+        if (link) {
+            changeChildRouter(link)
+        }
     }
 
     return {

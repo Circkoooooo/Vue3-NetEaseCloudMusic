@@ -10,7 +10,7 @@ export const handleRouter = () => {
      */
     const changeRouter = (link: string) => {
         router.push({
-            path: "/" + link
+            path: "/" + link,
         })
     }
 
