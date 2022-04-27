@@ -22,6 +22,6 @@
         "src/**/*.tsx",
         "src/**/*.vue",
         "src/test/treeTagGroup.js"
-    ],
+, "src/utils/timestampToDate.js"    ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
