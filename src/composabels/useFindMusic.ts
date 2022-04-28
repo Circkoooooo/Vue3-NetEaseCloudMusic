@@ -1,13 +1,15 @@
 import { TreeTagList } from "@/config/FindMusic_TreeTag";
 import { computed, ref } from "vue";
 import { handleRouter } from "@/composabels/handleRouter";
+import { useFindMusicStore } from "@/store/findMusic";
+
 export type tempObj = {
     name: string,
     link?: string
 }[]
 export const useFindMusic = () => {
+    const findmusicStore = useFindMusicStore()
     const { changeChildRouter } = handleRouter()
-    const currentIndex = ref(0)
 
     /**
     * 将config数据计算成对象数据
@@ -28,7 +30,7 @@ export const useFindMusic = () => {
      * @param index 
      */
     const changeBannerTag = (index: number, link: string | undefined) => {
-        currentIndex.value = index
+        findmusicStore.currentIndex = index
         if (link) {
             changeChildRouter(link)
         }
@@ -36,7 +38,6 @@ export const useFindMusic = () => {
 
     return {
         TagObjList,
-        currentIndex,
         changeBannerTag
     }
 }

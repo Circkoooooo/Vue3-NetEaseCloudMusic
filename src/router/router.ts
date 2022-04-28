@@ -2,7 +2,10 @@ import { createRouter, createWebHashHistory } from "vue-router"
 import FindMusic from '../page/FindMusic/src/FindMusic.vue'
 import Video from '../page/Video/src/Video.vue'
 import FindMusicRecommend from '@/components/FindMusicRecommend/src/FindMusicRecommend.vue'
+import FindMusicMusicList from '@/components/FindMusicMusicList/src/FindMusicMusicList.vue'
 import MusicListShow from '@/page/MusicListShow/src/MusicListShow.vue'
+
+
 const routes = [
     { path: "/", redirect: "/findmusic/recommend" },
     {
@@ -19,6 +22,10 @@ const routes = [
             {
                 path: "recommend",
                 component: FindMusicRecommend,
+            },
+            {
+                path: "musiclist",
+                component: FindMusicMusicList,
             }
         ]
     },

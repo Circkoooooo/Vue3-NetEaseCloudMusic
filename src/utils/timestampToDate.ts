@@ -5,6 +5,4 @@ export const timestampToDate = (timestamp: number) => {
         dateArr[1] = "0" + dateArr[1]
     }
     return dateArr.join("-")
-
-
 }
