@@ -3,10 +3,11 @@ import { useMusicListStore } from '@/store/musiclist'
 import { getMusicListDetail } from '@/api/getMusicListDetail'
 import { PlayList } from '@/model/PlayList'
 import { getUserDetail } from '@/api/getUserDetail'
+import { ref } from 'vue'
 export const useMusicListShow = () => {
     const { changeRouter } = handleRouter()
     const musicListStore = useMusicListStore()
-
+    const isShowDescription = ref(false)
     /**
      * 歌单详情页
      * @param musicid 歌单的id
@@ -34,8 +35,15 @@ export const useMusicListShow = () => {
         })
     }
 
+    const changeShowDescription = () => {
+        console.log(isShowDescription)
+        isShowDescription.value = !isShowDescription.value
+    }
+
     return {
         gotoMusicList,
-        MusicListDetail
+        MusicListDetail,
+        isShowDescription,
+        changeShowDescription
     }
 }

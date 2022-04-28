@@ -10,5 +10,8 @@ export type PlayList = {
     subscribedCount: number,
     ordered: number,
     description: string,
+    tags: string[],
+    playCount: number,
+    trackCount: number,
     userInfo: UserInfo,
 }

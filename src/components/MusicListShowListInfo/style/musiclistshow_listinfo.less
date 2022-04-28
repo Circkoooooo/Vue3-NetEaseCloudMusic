@@ -80,4 +80,126 @@
             color: #818781;
         }
     }
+
+    //按钮组
+    .listinforight_buttongroup {
+        width: 100%;
+        height: 56px;
+        display: flex;
+        align-items: center;
+
+
+        .listinfo_playall {
+            &:hover {
+                background-color: #d94444;
+            }
+
+            cursor: pointer;
+            height: 36px;
+            width: 150px;
+            border-radius: 24px;
+            background-color: #ec4141;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+            padding: 0 5px 0 10px;
+
+            .play_icon {
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+
+            .add_icon {
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 10px;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+
+
+    //音乐标签
+    .listinforight_musictag {
+        font-size: @smaller_text;
+
+        .listinfo_musictag {
+
+            line-height: 24px;
+            color: #85b9e6;
+            cursor: pointer;
+
+            &:hover {
+                color: #a6ced9;
+            }
+
+            .musictag_suffix {
+                color: #000000
+            }
+        }
+
+    }
+
+    .listinforight_countinfo {
+        margin-top: 4px;
+        font-size: @smaller_text;
+
+        .listinfo_trackcount {
+            color: @sup_bg;
+            margin-right: 10px;
+        }
+
+        .playcount_playcount {
+            color: @sup_bg;
+        }
+    }
+
+    .listinforight_description {
+        white-space: pre-line;
+        line-height: 20px;
+        position: relative;
+        margin-top: 4px;
+        padding-right: 40px;
+        font-size: @smaller_text;
+
+        .listinfo_description {
+            color: @sup_bg;
+        }
+
+        .description_show {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            .description_show_norotate {
+                width: 16px;
+                height: 16px;
+
+            }
+
+            .description_show_rotate {
+                width: 16px;
+                height: 16px;
+                transform: rotate(180deg);
+
+            }
+
+        }
+
+
+    }
 }
