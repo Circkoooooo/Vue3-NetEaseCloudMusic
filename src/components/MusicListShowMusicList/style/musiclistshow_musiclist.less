@@ -1,0 +1,73 @@
+.listshow_musicitem {
+    padding: 0 40px;
+    height: 30px;
+    font-size: @small_text;
+    width: 100%;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    display: flex;
+    position: relative;
+
+    div {
+        justify-content: flex-start;
+        align-items: center;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .listshow_musicindex {
+        position: absolute;
+
+    }
+
+    .listshow_musicname {
+        margin-left: 96px;
+        width: 280px;
+    }
+}
+
+.listshow_musicitem_header {
+    padding-left: 60px;
+    height: 30px;
+    font-size: @small_text;
+    width: 100%;
+
+    display: flex;
+    // justify-content: space-between;
+
+    div {
+        display: flex;
+        padding-left: 6px;
+        justify-content: flex-start;
+        align-items: center;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .handler {
+        margin-left: 20px;
+        width: 50px;
+
+    }
+
+    .name {
+        width: 280px;
+    }
+
+}
+
+.odd {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.even {
+    background-color: rgba(0, 0, 0, 0.02);
+}

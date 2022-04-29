@@ -66,7 +66,10 @@
                                   .substring(0, 20) + "..."
                     }}
                 </span>
-                <span class="description_show" @click="changeShowDescription">
+                <span
+                    class="description_show"
+                    @click="$emit('changeShowDescription')"
+                >
                     <img
                         class="description_show_norotate"
                         :class="{
@@ -82,24 +85,16 @@
 
 <script setup lang="ts">
 import "../style/musiclistshow_listinfo.less";
-import { ref } from "vue";
-import { useMusicListShow } from "@/composabels/useMusicListShow";
-import { setLocalStorage, getLocalStorage } from "@/utils/handleLocalStorage";
 import { timestampToDate } from "@/utils/timestampToDate";
 import { numberToAbout } from "@/utils/numberToAbout";
 import type { PlayList } from "@/model/PlayList";
 
-const { MusicListDetail, isShowDescription, changeShowDescription } =
-    useMusicListShow();
-const playList = ref<PlayList>({} as PlayList);
-//设置缓存
-const playListStorage = getLocalStorage("playlist");
-
-if (playListStorage) {
-    playList.value = JSON.parse(playListStorage);
-}
-MusicListDetail().then((res) => {
-    playList.value = res;
-    setLocalStorage({ key: "playlist", value: playList.value });
-});
+defineEmits(["changeShowDescription"]);
+withDefaults(
+    defineProps<{
+        playList: PlayList;
+        isShowDescription: boolean;
+    }>(),
+    {}
+);
 </script>

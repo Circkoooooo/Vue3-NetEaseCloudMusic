@@ -4,14 +4,21 @@ import Video from '../page/Video/src/Video.vue'
 import FindMusicRecommend from '@/components/FindMusicRecommend/src/FindMusicRecommend.vue'
 import FindMusicMusicList from '@/components/FindMusicMusicList/src/FindMusicMusicList.vue'
 import MusicListShow from '@/page/MusicListShow/src/MusicListShow.vue'
-
+import MusicListShowMusicList from '@/components/MusicListShowMusicList/src/MusicListShowMusicList.vue'
 
 const routes = [
     { path: "/", redirect: "/findmusic/recommend" },
     {
         path: "/musiclistshow",
         name: "musiclistshow",
-        component: MusicListShow
+        component: MusicListShow,
+        redirect: "/musiclistshow/musiclist",
+        children: [
+            {
+                path: "musiclist",
+                component: MusicListShowMusicList
+            }
+        ]
     },
     {
         path: "/findmusic",

@@ -40,10 +40,19 @@ export const useMusicListShow = () => {
         isShowDescription.value = !isShowDescription.value
     }
 
+    // 将音乐列表的id汇总成用逗号隔开的形式
+    const getMusicListIds = (musicList: PlayList) => {
+        const strArr = []
+        for (let i = 0; i < musicList.trackIds.length; i++) {
+            strArr[i] = musicList.trackIds[i].id
+        }
+        return strArr.join(",")
+    }
     return {
         gotoMusicList,
         MusicListDetail,
         isShowDescription,
-        changeShowDescription
+        changeShowDescription,
+        getMusicListIds
     }
 }

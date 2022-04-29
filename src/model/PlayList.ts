@@ -1,4 +1,5 @@
 import type { UserInfo } from "./UserInfo"
+import type { Track } from './Track'
 export type PlayList = {
     id: number,
     name: string,
@@ -14,4 +15,5 @@ export type PlayList = {
     playCount: number,
     trackCount: number,
     userInfo: UserInfo,
+    trackIds: Track[]
 }
