@@ -27,7 +27,7 @@ interface FindMusicRecommendProps {
 withDefaults(defineProps<FindMusicRecommendProps>(), {});
 
 const bannerList = ref();
-const dailyRecommendMusicList = ref();
+const dailyRecommendMusicList = ref<MusicList>();
 getHomeAd().then((res) => {
     bannerList.value = res.data.data.blocks[0].extInfo.banners;
 });

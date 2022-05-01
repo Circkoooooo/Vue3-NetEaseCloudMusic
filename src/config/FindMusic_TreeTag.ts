@@ -5,7 +5,7 @@ export const TreeTagList = [
     },
     {
         name: "歌单",
-        link: "musiclist"
+        link: "findmusiclist"
     },
     {
         name: "排行榜",

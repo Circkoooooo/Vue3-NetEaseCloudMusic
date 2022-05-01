@@ -1,5 +1,5 @@
 .listshow_musicitem {
-    padding: 0 40px;
+    padding-left: 40px;
     height: 30px;
     font-size: @small_text;
     width: 100%;
@@ -21,48 +21,125 @@
         white-space: nowrap;
     }
 
-    .listshow_musicindex {
-        position: absolute;
 
+
+}
+
+
+
+
+.listshow_handler {
+    width: 60px;
+
+    .handler_btn {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 14px;
+
+        img {
+            height: 16px;
+            width: 16px;
+            opacity: 0.3;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 
-    .listshow_musicname {
-        margin-left: 96px;
-        width: 280px;
+}
+
+.listshow_musicindex {
+    width: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    padding: 0 6px;
+
+}
+
+.listshow_musicname {
+    flex: 1;
+    padding: 0 6px;
+
+}
+
+.listshow_singername {
+    width: 140px;
+    padding: 0 6px;
+
+    span {
+        color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+
+        &:hover {
+            color: black;
+        }
     }
 }
 
+.listshow_musiccd {
+    width: 180px;
+    padding: 0 6px;
+
+    span {
+        color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+.listshow_musiclong {
+    width: 80px;
+    padding: 0 6px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .listshow_musicitem_header {
-    padding-left: 60px;
+    padding-left: 40px;
     height: 30px;
     font-size: @small_text;
     width: 100%;
 
+    position: relative;
     display: flex;
-    // justify-content: space-between;
 
     div {
         display: flex;
-        padding-left: 6px;
         justify-content: flex-start;
         align-items: center;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-    }
-
-    .handler {
-        margin-left: 20px;
-        width: 50px;
-
-    }
-
-    .name {
-        width: 280px;
     }
 
 }
+
+.menu {
+    position: relative;
+    opacity: 0.6;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        .sort{
+            display: block;
+        }
+    }
+
+    .sort {
+        display: none;
+        position: absolute;
+        right: 6px;
+
+        img {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+
+
 
 .odd {
     background-color: rgba(0, 0, 0, 0.08);

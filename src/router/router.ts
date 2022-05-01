@@ -5,7 +5,7 @@ import FindMusicRecommend from '@/components/FindMusicRecommend/src/FindMusicRec
 import FindMusicMusicList from '@/components/FindMusicMusicList/src/FindMusicMusicList.vue'
 import MusicListShow from '@/page/MusicListShow/src/MusicListShow.vue'
 import MusicListShowMusicList from '@/components/MusicListShowMusicList/src/MusicListShowMusicList.vue'
-
+import MusicListShowComment from '@/components/MusicListShowComment/src/MusicListShowComment.vue'
 const routes = [
     { path: "/", redirect: "/findmusic/recommend" },
     {
@@ -17,6 +17,10 @@ const routes = [
             {
                 path: "musiclist",
                 component: MusicListShowMusicList
+            },
+            {
+                path: "comment",
+                component: MusicListShowComment
             }
         ]
     },
@@ -31,9 +35,10 @@ const routes = [
                 component: FindMusicRecommend,
             },
             {
-                path: "musiclist",
+                path: "findmusiclist",
                 component: FindMusicMusicList,
-            }
+            },
+
         ]
     },
     {

@@ -12,12 +12,7 @@ import "../style/findmusicitem_recommendmusic.less";
 import type { MusicList } from "@/model/MusicList";
 import MusicListCard from "@/components/MusicListCard/src/MusicListCard.vue";
 interface DailyRecommendMusicList {
-    dailyRecommendMusicList: MusicList;
+    dailyRecommendMusicList: MusicList[];
 }
-withDefaults(
-    defineProps<{
-        dailyRecommendMusicList: DailyRecommendMusicList;
-    }>(),
-    {}
-);
+withDefaults(defineProps<DailyRecommendMusicList>(), {});
 </script>
