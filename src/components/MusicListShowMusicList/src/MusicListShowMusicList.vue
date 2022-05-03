@@ -2,21 +2,31 @@
     <div class="listshow_musicitem_header">
         <div class="listshow_musicindex"></div>
         <div class="listshow_handler"></div>
-        <div class="listshow_musicname menu">
-            标题
-            <span class="sort"><img src="@/assets/icon/sort.png" /></span>
-        </div>
-        <div class="listshow_singername menu">
-            歌手
-            <span class="sort"><img src="@/assets/icon/sort.png" /></span>
-        </div>
-        <div class="listshow_musiccd menu">
-            专辑
-            <span class="sort"><img src="@/assets/icon/sort.png" /></span>
-        </div>
-        <div class="listshow_musiclong menu">
-            时长
-            <span class="sort"><img src="@/assets/icon/sort.png" /></span>
+        <div
+            v-for="(menu, key) in menuList"
+            :key="key"
+            class="menu"
+            :class="menu.class"
+            @click="$emit('sortByMenu', menu.name)"
+        >
+            {{ menu.menu }}
+            <span
+                :class="{
+                    sort: !getSortMenu(menu.name),
+                    sortStatus: getSortMenu(menu.name),
+                }"
+            >
+                {{ getSortMenu(menu.name) }}
+                <img
+                    v-if="getSortMenu(menu.name) === '升序'"
+                    src="@/assets/icon/sort-up.png"
+                />
+                <img
+                    v-else-if="getSortMenu(menu.name) === '降序'"
+                    src="@/assets/icon/sort-down.png"
+                />
+                <img v-else src="@/assets/icon/sort.png" />
+            </span>
         </div>
     </div>
     <div
@@ -58,10 +68,35 @@
 import "../style/musiclistshow_musiclist.less";
 import type { Track } from "@/model/Track";
 import { msToMinsec } from "@/utils/msToMinsec";
+
+defineEmits(["sortByMenu"]);
 withDefaults(
     defineProps<{
         track: Track[];
+        getSortMenu: Function;
     }>(),
     {}
 );
+const menuList = [
+    {
+        name: "musicname",
+        menu: "标题",
+        class: "listshow_musicname",
+    },
+    {
+        name: "singername",
+        menu: "歌手",
+        class: "listshow_singername",
+    },
+    {
+        name: "cd",
+        menu: "专辑",
+        class: "listshow_musiccd",
+    },
+    {
+        name: "musiclong",
+        menu: "时长",
+        class: "listshow_musiclong",
+    },
+];
 </script>

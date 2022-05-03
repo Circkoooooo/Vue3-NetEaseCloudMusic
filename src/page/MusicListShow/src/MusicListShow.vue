@@ -7,7 +7,11 @@
         ></MusicListShowListInfo>
         <MusicListShowMenu></MusicListShowMenu>
         <div class="musiclistshow_content">
-            <router-view :track="songDetails"></router-view>
+            <router-view
+                :track="currentSort === -1 ? songDetails : sortSongDetails"
+                @sortByMenu="sortByMenu"
+                :getSortMenu="getSortMenu"
+            ></router-view>
         </div>
     </div>
 </template>
@@ -18,18 +22,22 @@ import "../style/musiclistshow.less";
 import { ref } from "vue";
 import { useMusicListShow } from "@/composabels/useMusicListShow";
 import { setLocalStorage, getLocalStorage } from "@/utils/handleLocalStorage";
-import type { Track } from "@/model/Track";
 import type { PlayList } from "@/model/PlayList";
 import { getSongDetail } from "@/api/getSongDetail";
 
 const {
+    songDetails,
     MusicListDetail,
     isShowDescription,
     changeShowDescription,
     getMusicListIds,
+    getSortMenu,
+    sortByMenu,
+    sortSongDetails,
+    currentSort,
 } = useMusicListShow();
 const playList = ref<PlayList>({} as PlayList);
-const songDetails = ref<Track[]>();
+
 //设置缓存
 const playListStorage = getLocalStorage("playlist");
 
