@@ -8,7 +8,7 @@
                     {{ numberToCh(musiclist.playCount) }}
                 </div>
                 <div class="listinfo_imgplay">
-                    <img src="@/assets/icon/play-inner.png" />
+                    <img src="@/assets/icon/play-inner_red.png" />
                 </div>
             </div>
         </div>

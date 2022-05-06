@@ -10,6 +10,7 @@
             <router-view
                 :track="currentSort === -1 ? songDetails : sortSongDetails"
                 @sortByMenu="sortByMenu"
+                @tryPlayMusic="tryPlayMusic"
                 :getSortMenu="getSortMenu"
             ></router-view>
         </div>
@@ -35,6 +36,7 @@ const {
     sortByMenu,
     sortSongDetails,
     currentSort,
+    tryPlayMusic,
 } = useMusicListShow();
 const playList = ref<PlayList>({} as PlayList);
 

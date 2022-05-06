@@ -6,6 +6,10 @@ import { getUserDetail } from '@/api/getUserDetail'
 import type { Track } from "@/model/Track";
 import { computed, ref } from 'vue'
 import { sortByString } from '@/utils/sortByString'
+import { getSongUrl } from '@/api/getSongUrl'
+
+import { usePlayMusic } from './usePlayMusic'
+const { changeMusic } = usePlayMusic()
 export const useMusicListShow = () => {
     const { changeRouter } = handleRouter()
     const musicListStore = useMusicListStore()
@@ -147,6 +151,19 @@ export const useMusicListShow = () => {
         }
     }
 
+    /**
+     * 尝试播放音乐
+     * 判断是否音乐可用
+     * 判断是否音乐有权限播放
+     * 播放音乐
+     * @param number 
+     */
+    const tryPlayMusic = (musicId: number) => {
+        getSongUrl(musicId).then(res => {
+            changeMusic(res.data.data[0].url)
+        })
+    }
+
     return {
         songDetails,
         gotoMusicList,
@@ -157,6 +174,7 @@ export const useMusicListShow = () => {
         sortByMenu,
         getSortMenu,
         sortSongDetails,
-        currentSort
+        currentSort,
+        tryPlayMusic
     }
 }

@@ -18,12 +18,14 @@
             <router-view></router-view>
         </template>
     </Main>
+    <PlayMusic></PlayMusic>
 </template>
 <script setup lang="ts">
 import Header from "@/components/Header/src/Header.vue";
 import Main from "@/components/Main/src/Main.vue";
 import Aside from "@/components/Aside/src/Aside.vue";
 import AsideMenuGroup from "@/components/AsideMenuGroup/src/AsideMenuGroup.vue";
+import PlayMusic from "@/components/PlayMusic/src/PlayMusic.vue";
 import { asideMenu } from "@/config/Home_AsideMenu";
 import { useAside } from "@/composabels/useAside";
 const { currentAside, changeAside } = useAside();

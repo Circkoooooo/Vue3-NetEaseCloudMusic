@@ -34,6 +34,7 @@
         :key="key"
         class="listshow_musicitem"
         :class="{ odd: key % 2 !== 0, even: key % 2 === 0 }"
+        @dblclick="$emit('tryPlayMusic', item.id)"
     >
         <div class="listshow_musicindex">
             {{ key + 1 < 10 ? "0" + (key + 1) : key + 1 }}
@@ -69,7 +70,7 @@ import "../style/musiclistshow_musiclist.less";
 import type { Track } from "@/model/Track";
 import { msToMinsec } from "@/utils/msToMinsec";
 
-defineEmits(["sortByMenu"]);
+defineEmits(["sortByMenu", "tryPlayMusic"]);
 withDefaults(
     defineProps<{
         track: Track[];
