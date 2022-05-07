@@ -7,8 +7,8 @@ import type { Track } from "@/model/Track";
 import { computed, ref } from 'vue'
 import { sortByString } from '@/utils/sortByString'
 import { getSongUrl } from '@/api/getSongUrl'
-
 import { usePlayMusic } from './usePlayMusic'
+
 const { changeMusic } = usePlayMusic()
 export const useMusicListShow = () => {
     const { changeRouter } = handleRouter()
@@ -72,6 +72,7 @@ export const useMusicListShow = () => {
             }
         }
     })
+
     /**
      * 歌单详情页
      * @param musicid 歌单的id
@@ -156,11 +157,12 @@ export const useMusicListShow = () => {
      * 判断是否音乐可用
      * 判断是否音乐有权限播放
      * 播放音乐
-     * @param number 
+     * @param musicId
+     * @param musicInfo
      */
-    const tryPlayMusic = (musicId: number) => {
-        getSongUrl(musicId).then(res => {
-            changeMusic(res.data.data[0].url)
+    const tryPlayMusic = async (musicId: number, musicInfo: Track) => {
+        await getSongUrl(musicId).then(res => {
+            changeMusic(res.data.data[0].url, musicInfo)
         })
     }
 

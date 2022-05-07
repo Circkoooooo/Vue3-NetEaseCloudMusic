@@ -34,7 +34,7 @@
         :key="key"
         class="listshow_musicitem"
         :class="{ odd: key % 2 !== 0, even: key % 2 === 0 }"
-        @dblclick="$emit('tryPlayMusic', item.id)"
+        @dblclick="$emit('tryPlayMusic', item.id, item)"
     >
         <div class="listshow_musicindex">
             {{ key + 1 < 10 ? "0" + (key + 1) : key + 1 }}

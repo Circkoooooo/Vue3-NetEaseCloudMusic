@@ -2,13 +2,15 @@
     <div class="playmusic_playmenu">
         <PlayMenuButton
             :isPlay="musicStatus.isPlay"
-            @changePlay="changePlay"
+            @changePlay="$emit('changePlay')"
         ></PlayMenuButton>
         <PlayMenuBar
             :url="musicStatus.currentMusicUrl"
             :nowTime="musicStatus.nowTime"
             :musicLong="musicStatus.musicLong"
             :musicLongNumber="musicStatus.musicLongNumber"
+            :calcProgress="calcProgress"
+            @clickProgress="$emit('clickProgress', $event)"
         ></PlayMenuBar>
     </div>
 </template>
@@ -17,6 +19,13 @@
 import "../style/playmusic_playmenu.less";
 import PlayMenuButton from "./PlayMenuButton.vue";
 import PlayMenuBar from "./PlayMenuBar.vue";
-import { usePlayMusic } from "@/composabels/usePlayMusic";
-const { musicStatus, changePlay } = usePlayMusic();
+import type { MusicStatus } from "@/model/MusicStatus";
+defineEmits(["changePlay", "clickProgress"]);
+withDefaults(
+    defineProps<{
+        musicStatus: MusicStatus;
+        calcProgress: number;
+    }>(),
+    {}
+);
 </script>
