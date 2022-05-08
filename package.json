@@ -13,6 +13,9 @@
     },
     "build": {
         "appId": "org.hyx.cloud-music",
+        "win": {
+            "icon": "src/assets/icon/appicon.png"
+        },
         "directories": {
             "output": "output"
         }

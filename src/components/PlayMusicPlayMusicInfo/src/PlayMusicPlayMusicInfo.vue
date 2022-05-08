@@ -1,7 +1,8 @@
 <template>
     <div class="playmusic_playmusicinfo">
         <div class="playmusic_icon">
-            <img v-if="musicInfo" :src="musicInfo.al.picUrl" />
+            <img v-if="musicInfo.al.picUrl" :src="musicInfo.al.picUrl" />
+            <img v-else src="@/assets/icon/appicon.png" />
         </div>
         <div class="playmusic_info">
             <div class="playmusicinfo_title">
