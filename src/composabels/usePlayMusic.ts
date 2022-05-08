@@ -33,7 +33,7 @@ const initUsePlayMusic = () => {
         const currentTime = audio.value.currentTime
         musicStatus.musicLong = musicCurrentTimeToTime(duration)
         musicStatus.nowTime = musicCurrentTimeToTime(currentTime)
-        musicStatus.musicLongNumber.musicLong = Math.floor(duration)
+        musicStatus.musicLongNumber.musicLong =  Math.floor(duration)
         musicStatus.musicLongNumber.nowTime = Math.floor(currentTime)
     }
 
