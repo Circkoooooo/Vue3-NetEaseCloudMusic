@@ -77,10 +77,11 @@ export const useMusicListShow = () => {
      * 歌单详情页
      * @param musicid 歌单的id
      */
-    const gotoMusicList = (musicid: number) => {
-        musicListStore.musicListId = musicid
-        changeRouter("musiclistshow")
-
+    const gotoMusicList = (musicid: number | undefined) => {
+        if (musicid !== undefined) {
+            musicListStore.musicListId = musicid
+            changeRouter("musiclistshow")
+        }
     }
     /**
      * 获取当前歌单列表
